@@ -1,0 +1,40 @@
+﻿@model ASPNETCore_DB.Models.Consumer
+
+@{
+    ViewData["Title"] = "Consumer Details";
+}
+
+<h1 class="mb-4 text-primary">Consumer Details</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="p-4 shadow rounded bg-light">
+            <h4 class="text-secondary">Details</h4>
+            <hr />
+
+            <dl class="row">
+                <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.FullName)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.FullName)</dd>
+
+                <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.ContactNumber)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.ContactNumber)</dd>
+
+                <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.Email)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+                @if (!string.IsNullOrEmpty(Model?.Photo))
+                {
+                    <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.Photo)</dt>
+                    <dd class="col-sm-8">
+                        <img src="@WebConstants.ImagePath@Model.Photo" width="120" class="img-thumbnail rounded" />
+                    </dd>
+                }
+            </dl>
+
+            <div class="mt-4 d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@Model?.ConsumerId" class="btn btn-warning rounded-pill px-4 shadow-sm">Edit</a>
+                <a asp-action="Index" class="btn btn-secondary rounded-pill px-4 shadow-sm">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,240 @@
+﻿@{
+    ViewData["Title"] = "Shop";
+}
+<div class="container my-5">
+    <h2 class="text-center mb-4">Shop</h2>
+
+    <!-- Search Input -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6">
+            <input type="text" id="productSearch" class="form-control" placeholder="Search for a product...">
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="row justify-content-center" id="productList">
+        <style>
+            .product-item {
+                position: relative;
+                background-color: #f2f8f7;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: center;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                display: block;
+                height: 100%;
+                text-decoration: none;
+            }
+
+                .product-item:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                }
+
+            .product-thumbnail {
+                max-height: 200px;
+                object-fit: contain;
+                margin-bottom: 15px;
+            }
+
+            .product-title {
+                font-size: 1.2rem;
+                color: black;
+                margin-bottom: 10px;
+            }
+
+            .product-price {
+                font-weight: bold;
+                font-size: 1.1rem;
+                color: #000;
+                margin-bottom: 20px;
+                display: block;
+            }
+
+            .icon-cross {
+                position: absolute;
+                bottom: 15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 30px;
+                height: 30px;
+                background-color: #000;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+                .icon-cross img {
+                    width: 15px;
+                    height: 15px;
+                    filter: invert(1);
+                }
+
+            
+        </style>
+        <div class="row justify-content-center">
+            <!-- Item 1 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sbbf4a1dfbbf1450aa1f14baed699ac62B.jpg_960x960q75.jpg_.avif" class="img-fluid shop-thumbnail">
+                    <h3 class="product-title" >Tape</h3>
+                    <strong class="product-price">R20.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se3f21ac04b0a407a9c9cf763184d19d5k.jpg_960x960q75.jpg_.avif" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Backpack</h3>
+                    <strong class="product-price">R230.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/H55aec9ed98d346b999e4f7a8f99201bfm.jpg_960x960q75.jpg_.avif" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Camera</h3>
+                    <strong class="product-price">R2230.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6e67c604a8b04d3988ce0860efb07a10n.jpg_960x960q75.jpg_.avif" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Marking Pens</h3>
+                    <strong class="product-price">R45.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3c4fba109854475998a5ab246792ffb6E.jpg_960x960q75.jpg_.avif" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Sink</h3>
+                    <strong class="product-price">R1250.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Hf009cef1a8ba466884458cb817db8e73v.jpg_960x960q75.jpg_.avif" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Notebook Set</h3>
+                    <strong class="product-price">R180.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9beeee534c14490eb1b0ac27bc80e7d7o.png_960x960.png_.avif" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Scientific Calculator</h3>
+                    <strong class="product-price">R380.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6b765d870047452fac448a33fe7b7e8bN.jpg_960x960q75.jpg_.avif" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Highlighters Set</h3>
+                    <strong class="product-price">R30.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb23de04e50a54bc2a5e2634bc073ff2fn.jpg_960x960q75.jpg_.avif" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Hairbrush Set</h3>
+                    <strong class="product-price">R65.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Item 10 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd87592cc5ed743918f26bb7ccf942553Q.jpg_960x960q75.jpg_.avif" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">lamp</h3>
+                    <strong class="product-price">R75.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Item 11 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sbbde0b7a5b1447a8b5339853a46eef90G.jpg_960x960q75.jpg_.avif" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Lunch basket</h3>
+                    <strong class="product-price">R90.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Item 12 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="cart.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0509bc452dac4c7895e692c6450e9d1aB.jpg_960x960q75.jpg_.avif" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Water Bottle</h3>
+                    <strong class="product-price">R50.00</strong>
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for live search filter -->
+<script>
+    document.getElementById("productSearch").addEventListener("keyup", function () {
+      var input = this.value.toLowerCase();
+      var products = document.querySelectorAll("#productList .product-item");
+
+      products.forEach(function (item) {
+        var name = item.getAttribute("data-name").toLowerCase();
+        if (name.includes(input)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+</script>
+

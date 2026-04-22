@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ASPNETCore_DB.Models.Consumer>
+
+@{
+    ViewData["Title"] = "Consumers";
+}
+
+<h1 class="mb-4 text-primary">Consumers</h1>
+
+<div class="mb-3 d-flex justify-content-between align-items-center">
+    <a class="btn btn-success rounded-pill px-4 shadow-sm" asp-action="Create">
+        <i class="bi bi-plus-circle"></i> Create New
+    </a>
+
+    <form asp-action="Index" method="get" class="d-flex">
+        <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" placeholder="Search by Student Number" class="form-control me-2" />
+        <button type="submit" class="btn btn-outline-primary">Search</button>
+        <a asp-action="Index" class="btn btn-outline-secondary ms-2">Reset</a>
+    </form>
+</div>
+
+<table class="table table-bordered table-hover shadow-sm">
+    <thead class="table-light">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.First().FullName)</th>
+            <th>@Html.DisplayNameFor(model => model.First().ContactNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Email)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Photo)</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                <td>@Html.DisplayFor(modelItem => item.ContactNumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.Photo))
+                    {
+                        <img src="@WebConstants.ImagePath@item.Photo" width="60" class="img-thumbnail rounded" />
+                    }
+                    else
+                    {
+                        <span class="text-muted">No Photo</span>
+                    }
+                </td>
+                <td class="text-center">
+                    <a class="btn btn-sm btn-primary me-1" asp-action="Edit" asp-route-id="@item.ConsumerId">Edit</a>
+                    <a class="btn btn-sm btn-info text-white me-1" asp-action="Details" asp-route-id="@item.ConsumerId">Details</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.ConsumerId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

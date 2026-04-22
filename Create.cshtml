@@ -1,0 +1,65 @@
+﻿@model ASPNETCore_DB.Models.Consumer
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-primary mb-4">Create Consumer</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="p-4 shadow rounded bg-light">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <h4 class="mb-3 text-dark">Enter Consumer Details</h4>
+                <hr />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="FullName" class="form-control rounded" placeholder="Full Name" />
+                    <label asp-for="FullName"></label>
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="ContactNumber" class="form-control rounded" placeholder="Contact Number" />
+                    <label asp-for="ContactNumber"></label>
+                    <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Email" class="form-control rounded" placeholder="Email" />
+                    <label asp-for="Email"></label>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model?.Photo))
+                {
+                    <div class="mb-3">
+                        <label class="form-label">Current Photo</label><br />
+                        <img src="@WebConstants.ImagePath@Model.Photo" width="120" class="img-thumbnail rounded" />
+                    </div>
+                }
+
+                <div class="mb-3">
+                    <label for="uploadBox" class="form-label">Upload New Photo</label>
+                    <input type="file" name="files" id="uploadBox" class="form-control rounded" />
+                </div>
+
+                <div class="d-grid mb-3">
+                    <input type="submit" value="Create" class="btn btn-primary btn-lg rounded-pill shadow-sm" />
+                </div>
+
+                <div>
+                    <a asp-action="Index" class="text-decoration-none">← Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
