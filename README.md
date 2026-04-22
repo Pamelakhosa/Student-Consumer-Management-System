@@ -1,5 +1,4 @@
 # Student-Consumer-Management-System
-# Student & Consumer Management System
 
 ## 📖 Overview
 
